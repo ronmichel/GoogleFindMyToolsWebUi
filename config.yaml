@@ -1,0 +1,30 @@
+name: "Google Find My Tools Web UI"
+description: "Web UI for Google Find My Tools (Find Hub trackers & Android devices)"
+version: "1.0.0"
+slug: "google_find_my_webui"
+url: "https://github.com/ronmichel/GoogleFindMyToolsWebUi"
+init: false
+arch:
+  - amd64
+  - aarch64
+startup: application
+boot: auto
+webui: "[PROTO:https_enabled]://[HOST]:[PORT:4321]"
+ports:
+  4321/tcp: 4321
+ports_description:
+  4321/tcp: "Google Find My Tools Web UI"
+map:
+  - share:rw
+options:
+  http_user: ""
+  http_password: ""
+  secrets_encryption_key: ""
+  https_enabled: false
+  gfmt_tls_san: ""
+schema:
+  http_user: str?
+  http_password: password?
+  secrets_encryption_key: password?
+  https_enabled: bool?
+  gfmt_tls_san: str?
